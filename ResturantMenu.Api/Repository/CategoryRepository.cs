@@ -44,7 +44,7 @@ namespace ResturantMenu.Api.Repository
             entity.Name = category.Name;
             entity.Sequence = category.Sequence;
             entity.Image = category.Image;
-            entity.IsAvaliable = category.IsAvaliable;
+            entity.IsAvailable = category.IsAvailable;
             entity.Description = category.Description;
 
             await _appDbContext.SaveChangesAsync();

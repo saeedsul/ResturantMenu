@@ -36,7 +36,7 @@ namespace ResturantMenu.Api.Controllers
 
             if (string.IsNullOrEmpty(category.Name))
             {
-                ModelState.AddModelError(nameof(category.Name), "Category name can not be empty");
+                ModelState.AddModelError(nameof(category.Name), "can not be empty");
             }
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
@@ -54,7 +54,7 @@ namespace ResturantMenu.Api.Controllers
 
             if (string.IsNullOrEmpty(category.Name))
             {
-                ModelState.AddModelError(nameof(category.Name), "Category name can not be empty");
+                ModelState.AddModelError(nameof(category.Name), "can not be empty");
             }
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
@@ -81,7 +81,7 @@ namespace ResturantMenu.Api.Controllers
 
             await _categoryRepository.Delete(id);
 
-            return NoContent();//success
+            return NoContent();
         }
     }
 }

@@ -1,61 +1,99 @@
-﻿@inherits MenuBase 
+﻿@inherits MenuBase
+       
+    <div class="row">
+        <div class="col-sm-12 col-md-8 col-lg-8">
+            @if (Categories.Any())
+            {
+                <div class="row">
+                    
+                
+                <TabSet>
+                    @foreach (var category in Categories)
+                    {
+                        <Tab Title="@category.Name">
 
-<div class="row">
-    <div class="col-sm-12 col-md-8 col-lg-8">
-        @if(Categories.Any())
-        { 
-            <TabSet>
-                @foreach (var category in Categories)
-                {
-                    <Tab Title="@category.Name">
-                        <div class="card-deck">
-                            @foreach (var product in Products.FindAll(s => s.CategoryId == category.CategoryId))
-                            {
-                                <div class="card text-center cart-item-font">
-                                    <div class="card-header">@product.Name</div>
-                                    <div class="card-body">
-                                        <div class="card-text">@product.UnitPrice.ToString("C")</div>
-                                    </div>
-                                    <div class="card-footer">
-                                        <span class="oi oi-plus btn btn-dark" @onclick="@(() => AddToCart(product))"></span>
+                            <div class="row"> 
+                                @foreach (var product in Products.FindAll(s => s.CategoryId == category.CategoryId))
+                                {
+                                <div class="col-sm-4 py-2 text-center cart-item-font">
+                                    <div class="card h-100">
+                                        <div class="card-header">@product.Name</div>
+                                        <div class="card-body">
+                                            <div class="card-text">@product.UnitPrice.ToString("C")</div>
+                                        </div>
+                                        <div class="card-footer">
+                                            <span class="oi oi-plus btn btn-dark" @onclick="@(() => AddToCart(product))"></span>
+                                        </div>
                                     </div>
                                 </div>
-                            }
-                        </div>
-                    </Tab>
-                }
-            </TabSet>
-        }
-    </div>
-    <div class="col col-sm-10 col-md-3 col-lg-3 @(Order.Products.Any() ? "" : "collapse")">
-        <div class="card-deck">
-            <div class="card">
-                <div class="card-header text-center cart-item-font">Order List</div>
-                <div class="card-body">
-                <ul class="list-group list-group-flush">
-                    @foreach (var product in Order.Products)
-                    {
-                        <li class="list-group-item cart-item-font card-item-black">
-                            <div class="row no-margin-left">@product.Name</div>
-                            <div class="float-left">
-                                <i class="oi oi-minus btn btn-danger small-icon" @onclick="@(() => RemoveFromCart(product))"></i>
-                                <span class="badge badge-secondary">@product.Quantity</span>
-                                <i class="oi oi-plus btn btn-dark small-icon" @onclick="@(() => AddToCart(product))"></i>
+                                }
                             </div>
-                            <div class="float-right"> @product.TotalPrice.ToString("C")</div>
-                        </li>
-                    }
+                                    @*@foreach (var product in Products.FindAll(s => s.CategoryId == category.CategoryId))
+                                    {
+                                    <div class="card h-100 card-body">
+                                        <div class="card-header">@product.Name</div>
+                                        <div class="card-body">
+                                            <div class="card-text">@product.UnitPrice.ToString("C")</div>
+                                        </div>
+                                        <div class="card-footer">
+                                            <span class="oi oi-plus btn btn-dark" @onclick="@(() => AddToCart(product))"></span>
+                                        </div>
+                                    </div>
+                                    }*@
+                                  
 
-                    <li class="list-group-item cart-item-font card-item-black">
-                        <div class="card-text text-center">Total: @Order.Total.ToString("C")</div>
-                    </li>
-                </ul>
+
+                            @*<div class="row">
+                                <div class="card-deck">
+                                    @foreach (var product in Products.FindAll(s => s.CategoryId == category.CategoryId))
+                                    {
+                                        <div class="card text-center cart-item-font">
+                                            <div class="card-header">@product.Name</div>
+                                            <div class="card-body">
+                                                <div class="card-text">@product.UnitPrice.ToString("C")</div>
+                                            </div>
+                                            <div class="card-footer">
+                                                <span class="oi oi-plus btn btn-dark" @onclick="@(() => AddToCart(product))"></span>
+                                            </div>
+                                        </div>
+                                    }
+                                </div>
+                            </div>*@
+                        </Tab>
+                    }
+                </TabSet>
                 </div>
-                <div class="card-footer text-center">
-                    <span class="btn btn-secondary">Print</span>
-                    <span class="btn btn-dark">Pay</span>
+            }
+        </div>
+        <div class="col col-sm-10 col-md-3 col-lg-3 @(Order.Products.Any() ? "" : "collapse")">
+            <div class="card-deck">
+                <div class="card">
+                    <div class="card-header text-center cart-item-font">Order List</div>
+                    <div class="card-body">
+                        <ul class="list-group list-group-flush">
+                            @foreach (var product in Order.Products)
+                            {
+                                <li class="list-group-item cart-item-font card-item-black">
+                                    <div class="row no-margin-left">@product.Name</div>
+                                    <div class="float-left">
+                                        <i class="oi oi-minus btn btn-danger small-icon" @onclick="@(() => RemoveFromCart(product))"></i>
+                                        <span class="badge badge-secondary">@product.Quantity</span>
+                                        <i class="oi oi-plus btn btn-dark small-icon" @onclick="@(() => AddToCart(product))"></i>
+                                    </div>
+                                    <div class="float-right"> @product.TotalPrice.ToString("C")</div>
+                                </li>
+                            }
+
+                            <li class="list-group-item cart-item-font card-item-black">
+                                <div class="card-text text-center">Total: @Order.Total.ToString("C")</div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="card-footer text-center">
+                        <span class="btn btn-secondary">Print</span>
+                        <span class="btn btn-dark">Pay</span>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>

@@ -6,7 +6,7 @@ namespace ResturantMenu.Api.Interfaces
 {
     public interface IProductRepository
     {
-        Task<List<Product>> GetAll();
+        Task<List<Product>> Get();
         Task<Product> Get(int productId);
         Task<Product> Add(Product product);
         Task<Product> Update(Product product);

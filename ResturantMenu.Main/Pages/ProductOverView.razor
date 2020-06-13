@@ -1,0 +1,44 @@
+﻿@page "/productoverview"
+@inherits ProductOverViewBase
+
+<h1 class="page-title">All products</h1>
+
+@if (Products == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+        <tr>
+            <th></th>
+            <th>Name</th>
+            <th>Unit Price</th>
+            <th>Is Available</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var product in Products)
+        {
+            <tr>
+                <td><img src="@($"https://gillcleerenpluralsight.blob.core.windows.net/person/{product.ProductId}-small.jpg")" class="rounded-circle" /></td>
+                <td>@product.Name</td>
+                <td>@product.UnitPrice</td>
+                <td>@product.IsAvailable</td>
+                <td> 
+                    <i class="oi oi-trash" @onclick="@(() => Delete(product.ProductId))"></i>
+                    <NavLink href="@($"productdetail/{product.ProductId}")" class="btn btn-primary table-btn">
+                        <i class="fas fa-edit"></i>
+                    </NavLink>
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+}
+
+<button @onclick="QuickAddProduct" class="btn btn-dark table-btn quick-add-btn">&nbsp;&nbsp;+&nbsp;&nbsp;</button>
+
+<AddProductDialog @ref="AddProductDialog" CloseEventCallback="@(AddProductDialog_OnDialogClose)"></AddProductDialog>

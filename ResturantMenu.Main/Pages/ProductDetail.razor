@@ -1,0 +1,37 @@
+﻿@page "/productdetail/{ProductId}"
+@inherits ProductDetailBase
+
+<section class="product-edit">
+
+    <h1 class="page-title">Details for @Product.Name</h1>
+
+    <EditForm Model="@Product" OnValidSubmit="@(() => HandleValidSubmit())" OnInvalidSubmit="@(() => HandleInvalidSubmit())">
+        <DataAnnotationsValidator />
+                                
+        <div class="form-group">
+            <label for="name">Name: </label>
+            <InputText id="name" class="form-control" @bind-Value="Product.Name" placeholder="Enter product name" />
+            <ValidationMessage For="@(() => Product.Name)" />
+        </div>
+        <div class="form-group">
+            <label for="unitprice">Unit Price: </label>
+            <InputNumber id="unitprice" class="form-control" @bind-Value="Product.UnitPrice" />
+        </div>
+        <div class="form-group">
+            <label for="image">Image: </label>
+            <InputText id="image" class="form-control" @bind-Value="Product.Image" placeholder="Enter product image" />
+        </div>
+        @*<div class="form-group">
+                            <label for="isavailable">Is Available: </label>
+                            <InputCheckbox id="isavailable" @bind-Value="Product.IsAvaliable"/>
+                        </div>*@
+        <div class="align-content-center">
+            <button type="submit" class="btn btn-primary">Save category</button>
+            <a class="btn btn-outline-primary edit-outline-btn" @onclick="@NavigateToMainMenu">Cancel</a>
+        </div>
+    </EditForm>
+
+    <div class="alert @StatusClass">@Message</div>
+    <a class="btn btn-outline-primary" @onclick="@NavigateToMainMenu">Back to overview</a>
+
+</section>

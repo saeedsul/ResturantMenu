@@ -2,6 +2,15 @@
   "version": 3,
   "targets": {
     ".NETStandard,Version=v2.0": {
+      "Json.Net/1.0.22": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Json.Net.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Json.Net.dll": {}
+        }
+      },
       "Microsoft.AspNetCore.Authorization/3.1.4": {
         "type": "package",
         "dependencies": {
@@ -180,6 +189,15 @@
           "build/netstandard2.0/NETStandard.Library.targets": {}
         }
       },
+      "Newtonsoft.Json/12.0.3": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
+        }
+      },
       "System.Buffers/4.5.1": {
         "type": "package",
         "compile": {
@@ -288,6 +306,18 @@
     }
   },
   "libraries": {
+    "Json.Net/1.0.22": {
+      "sha512": "y5xI87/heGiNZ859fsTORkoiB93qEW/rwLtxvJBAeQIoCCPoOLXzZiMx/HHg4WnR9UhcMH6Ec6m76jN+qqZVSg==",
+      "type": "package",
+      "path": "json.net/1.0.22",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "json.net.1.0.22.nupkg.sha512",
+        "json.net.nuspec",
+        "lib/netstandard2.0/Json.Net.dll"
+      ]
+    },
     "Microsoft.AspNetCore.Authorization/3.1.4": {
       "sha512": "uIHoOU15To1V1XbYwYHStke+gtKSormPtrgEqI9i8+kslM/0YJXraLPe1ygFZk+mH459s3Evns6QV1AZRcL90A==",
       "type": "package",
@@ -653,6 +683,37 @@
         "netstandard.library.nuspec"
       ]
     },
+    "Newtonsoft.Json/12.0.3": {
+      "sha512": "6mgjfnRB4jKMlzHSl+VD+oUc1IebOZabkbyWj2RiTgWwYPPuaK1H97G1sHqGwPlS5npiF5Q0OrxN1wni2n5QWg==",
+      "type": "package",
+      "path": "newtonsoft.json/12.0.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.md",
+        "lib/net20/Newtonsoft.Json.dll",
+        "lib/net20/Newtonsoft.Json.xml",
+        "lib/net35/Newtonsoft.Json.dll",
+        "lib/net35/Newtonsoft.Json.xml",
+        "lib/net40/Newtonsoft.Json.dll",
+        "lib/net40/Newtonsoft.Json.xml",
+        "lib/net45/Newtonsoft.Json.dll",
+        "lib/net45/Newtonsoft.Json.xml",
+        "lib/netstandard1.0/Newtonsoft.Json.dll",
+        "lib/netstandard1.0/Newtonsoft.Json.xml",
+        "lib/netstandard1.3/Newtonsoft.Json.dll",
+        "lib/netstandard1.3/Newtonsoft.Json.xml",
+        "lib/netstandard2.0/Newtonsoft.Json.dll",
+        "lib/netstandard2.0/Newtonsoft.Json.xml",
+        "lib/portable-net40+sl5+win8+wp8+wpa81/Newtonsoft.Json.dll",
+        "lib/portable-net40+sl5+win8+wp8+wpa81/Newtonsoft.Json.xml",
+        "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.dll",
+        "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.xml",
+        "newtonsoft.json.12.0.3.nupkg.sha512",
+        "newtonsoft.json.nuspec",
+        "packageIcon.png"
+      ]
+    },
     "System.Buffers/4.5.1": {
       "sha512": "Rw7ijyl1qqRS0YQD/WycNst8hUUMgrMH4FCn1nNm27M4VxchZ1js3fVjQaANHO5f3sN4isvP4a+Met9Y4YomAg==",
       "type": "package",
@@ -964,9 +1025,11 @@
   },
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
+      "Json.Net >= 1.0.22",
       "Microsoft.AspNetCore.Components >= 3.1.4",
       "Microsoft.AspNetCore.Components.Web >= 3.1.4",
       "NETStandard.Library >= 2.0.3",
+      "Newtonsoft.Json >= 12.0.3",
       "ResturantMenu.Shared >= 1.0.0"
     ]
   },
@@ -1017,6 +1080,10 @@
     "frameworks": {
       "netstandard2.0": {
         "dependencies": {
+          "Json.Net": {
+            "target": "Package",
+            "version": "[1.0.22, )"
+          },
           "Microsoft.AspNetCore.Components": {
             "target": "Package",
             "version": "[3.1.4, )"
@@ -1030,6 +1097,10 @@
             "target": "Package",
             "version": "[2.0.3, )",
             "autoReferenced": true
+          },
+          "Newtonsoft.Json": {
+            "target": "Package",
+            "version": "[12.0.3, )"
           }
         },
         "imports": [

@@ -28,7 +28,7 @@ else
                 <td>@category.Name</td>
                 <td>@category.Description</td>
                 <td>@category.Sequence</td>
-                <td>@category.IsAvaliable</td>
+                <td>@category.IsAvailable</td>
                 <td> 
                     <i class="oi oi-trash" @onclick="@(() => Delete(category.CategoryId))"></i>
                     <NavLink href="@($"categorydetail/{category.CategoryId}")" class="btn btn-primary table-btn">

@@ -185,6 +185,7 @@ app {
 .small-icon {
     font-size: 0.45em;
 }
+
 @media (max-width: 767.98px) {
     .main .top-row:not(.auth) {
         display: none;

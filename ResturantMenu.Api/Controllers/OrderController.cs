@@ -37,7 +37,7 @@ namespace ResturantMenu.Api.Controllers
 
             if (!(order.Products.Any()))
             {
-                ModelState.AddModelError(nameof(order.Products), "Order must have product");
+                ModelState.AddModelError(nameof(order.Products), "can not be empty");
             }
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);

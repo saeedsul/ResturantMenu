@@ -5,6 +5,7 @@ F:\Saeed-Code\ResturantMenu\ResturantMenu.Main\obj\Debug\netstandard2.0\Resturan
 F:\Saeed-Code\ResturantMenu\ResturantMenu.Main\obj\Debug\netstandard2.0\ResturantMenu.Main.RazorComponent.input.cache
 F:\Saeed-Code\ResturantMenu\ResturantMenu.Main\obj\Debug\netstandard2.0\RazorDeclaration\App.razor.g.cs
 F:\Saeed-Code\ResturantMenu\ResturantMenu.Main\obj\Debug\netstandard2.0\RazorDeclaration\Components\AddCategoryDialog.razor.g.cs
+F:\Saeed-Code\ResturantMenu\ResturantMenu.Main\obj\Debug\netstandard2.0\RazorDeclaration\Components\AddProductDialog.razor.g.cs
 F:\Saeed-Code\ResturantMenu\ResturantMenu.Main\obj\Debug\netstandard2.0\RazorDeclaration\Components\Menu.razor.g.cs
 F:\Saeed-Code\ResturantMenu\ResturantMenu.Main\obj\Debug\netstandard2.0\RazorDeclaration\Components\Tab.razor.g.cs
 F:\Saeed-Code\ResturantMenu\ResturantMenu.Main\obj\Debug\netstandard2.0\RazorDeclaration\Components\TabSet.razor.g.cs
@@ -13,6 +14,8 @@ F:\Saeed-Code\ResturantMenu\ResturantMenu.Main\obj\Debug\netstandard2.0\RazorDec
 F:\Saeed-Code\ResturantMenu\ResturantMenu.Main\obj\Debug\netstandard2.0\RazorDeclaration\Pages\Error.razor.g.cs
 F:\Saeed-Code\ResturantMenu\ResturantMenu.Main\obj\Debug\netstandard2.0\RazorDeclaration\Pages\Index.razor.g.cs
 F:\Saeed-Code\ResturantMenu\ResturantMenu.Main\obj\Debug\netstandard2.0\RazorDeclaration\Pages\MainMenu.razor.g.cs
+F:\Saeed-Code\ResturantMenu\ResturantMenu.Main\obj\Debug\netstandard2.0\RazorDeclaration\Pages\ProductDetail.razor.g.cs
+F:\Saeed-Code\ResturantMenu\ResturantMenu.Main\obj\Debug\netstandard2.0\RazorDeclaration\Pages\ProductOverView.razor.g.cs
 F:\Saeed-Code\ResturantMenu\ResturantMenu.Main\obj\Debug\netstandard2.0\RazorDeclaration\Shared\MainLayout.razor.g.cs
 F:\Saeed-Code\ResturantMenu\ResturantMenu.Main\obj\Debug\netstandard2.0\RazorDeclaration\Shared\NavMenu.razor.g.cs
 F:\Saeed-Code\ResturantMenu\ResturantMenu.Main\obj\Debug\netstandard2.0\RazorDeclaration\_Imports.razor.g.cs
@@ -22,6 +25,7 @@ F:\Saeed-Code\ResturantMenu\ResturantMenu.Main\obj\Debug\netstandard2.0\Resturan
 F:\Saeed-Code\ResturantMenu\ResturantMenu.Main\obj\Debug\netstandard2.0\ResturantMenu.Main.RazorCoreGenerate.cache
 F:\Saeed-Code\ResturantMenu\ResturantMenu.Main\obj\Debug\netstandard2.0\Razor\App.razor.g.cs
 F:\Saeed-Code\ResturantMenu\ResturantMenu.Main\obj\Debug\netstandard2.0\Razor\Components\AddCategoryDialog.razor.g.cs
+F:\Saeed-Code\ResturantMenu\ResturantMenu.Main\obj\Debug\netstandard2.0\Razor\Components\AddProductDialog.razor.g.cs
 F:\Saeed-Code\ResturantMenu\ResturantMenu.Main\obj\Debug\netstandard2.0\Razor\Components\Menu.razor.g.cs
 F:\Saeed-Code\ResturantMenu\ResturantMenu.Main\obj\Debug\netstandard2.0\Razor\Components\Tab.razor.g.cs
 F:\Saeed-Code\ResturantMenu\ResturantMenu.Main\obj\Debug\netstandard2.0\Razor\Components\TabSet.razor.g.cs
@@ -30,6 +34,8 @@ F:\Saeed-Code\ResturantMenu\ResturantMenu.Main\obj\Debug\netstandard2.0\Razor\Pa
 F:\Saeed-Code\ResturantMenu\ResturantMenu.Main\obj\Debug\netstandard2.0\Razor\Pages\Error.razor.g.cs
 F:\Saeed-Code\ResturantMenu\ResturantMenu.Main\obj\Debug\netstandard2.0\Razor\Pages\Index.razor.g.cs
 F:\Saeed-Code\ResturantMenu\ResturantMenu.Main\obj\Debug\netstandard2.0\Razor\Pages\MainMenu.razor.g.cs
+F:\Saeed-Code\ResturantMenu\ResturantMenu.Main\obj\Debug\netstandard2.0\Razor\Pages\ProductDetail.razor.g.cs
+F:\Saeed-Code\ResturantMenu\ResturantMenu.Main\obj\Debug\netstandard2.0\Razor\Pages\ProductOverView.razor.g.cs
 F:\Saeed-Code\ResturantMenu\ResturantMenu.Main\obj\Debug\netstandard2.0\Razor\Shared\MainLayout.razor.g.cs
 F:\Saeed-Code\ResturantMenu\ResturantMenu.Main\obj\Debug\netstandard2.0\Razor\Shared\NavMenu.razor.g.cs
 F:\Saeed-Code\ResturantMenu\ResturantMenu.Main\obj\Debug\netstandard2.0\Razor\_Imports.razor.g.cs

@@ -295,6 +295,17 @@
           "ResturantMenu.ServerApp.dll": {}
         }
       },
+      "Json.Net/1.0.22": {
+        "runtime": {
+          "lib/netstandard2.0/Json.Net.dll": {
+            "assemblyVersion": "1.0.22.1",
+            "fileVersion": "1.0.22.1"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/Json.Net.dll": {}
+        }
+      },
       "Microsoft.AspNetCore.Authorization/3.1.4": {
         "dependencies": {
           "Microsoft.AspNetCore.Metadata": "3.1.4",
@@ -443,6 +454,17 @@
           "lib/netcoreapp3.1/Microsoft.JSInterop.dll": {}
         }
       },
+      "Newtonsoft.Json/12.0.3": {
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "assemblyVersion": "12.0.0.0",
+            "fileVersion": "12.0.3.23909"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
+        }
+      },
       "System.ComponentModel.Annotations/4.7.0": {
         "compile": {
           "ref/netstandard2.1/System.ComponentModel.Annotations.dll": {}
@@ -450,8 +472,10 @@
       },
       "ResturantMenu.Main/1.0.0": {
         "dependencies": {
+          "Json.Net": "1.0.22",
           "Microsoft.AspNetCore.Components": "3.1.4",
           "Microsoft.AspNetCore.Components.Web": "3.1.4",
+          "Newtonsoft.Json": "12.0.3",
           "ResturantMenu.Shared": "1.0.0"
         },
         "runtime": {
@@ -2052,6 +2076,13 @@
       "serviceable": false,
       "sha512": ""
     },
+    "Json.Net/1.0.22": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-y5xI87/heGiNZ859fsTORkoiB93qEW/rwLtxvJBAeQIoCCPoOLXzZiMx/HHg4WnR9UhcMH6Ec6m76jN+qqZVSg==",
+      "path": "json.net/1.0.22",
+      "hashPath": "json.net.1.0.22.nupkg.sha512"
+    },
     "Microsoft.AspNetCore.Authorization/3.1.4": {
       "type": "package",
       "serviceable": true,
@@ -2135,6 +2166,13 @@
       "sha512": "sha512-/H4UIvThzlF43mCOYF0ShQ+S9MulW5f3J0rScgTH34Tk+3gRyBa3lM3zntIBB+9/jyHki3V9c7EZmAzhMlezdg==",
       "path": "microsoft.jsinterop/3.1.4",
       "hashPath": "microsoft.jsinterop.3.1.4.nupkg.sha512"
+    },
+    "Newtonsoft.Json/12.0.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-6mgjfnRB4jKMlzHSl+VD+oUc1IebOZabkbyWj2RiTgWwYPPuaK1H97G1sHqGwPlS5npiF5Q0OrxN1wni2n5QWg==",
+      "path": "newtonsoft.json/12.0.3",
+      "hashPath": "newtonsoft.json.12.0.3.nupkg.sha512"
     },
     "System.ComponentModel.Annotations/4.7.0": {
       "type": "package",

@@ -46,3 +46,5 @@ F:\Saeed-Code\ResturantMenu\ResturantMenu.ServerApp\obj\Debug\netcoreapp3.1\stat
 F:\Saeed-Code\ResturantMenu\ResturantMenu.ServerApp\obj\Debug\netcoreapp3.1\ResturantMenu.ServerApp.dll
 F:\Saeed-Code\ResturantMenu\ResturantMenu.ServerApp\obj\Debug\netcoreapp3.1\ResturantMenu.ServerApp.pdb
 F:\Saeed-Code\ResturantMenu\ResturantMenu.ServerApp\obj\Debug\netcoreapp3.1\ResturantMenu.ServerApp.genruntimeconfig.cache
+F:\Saeed-Code\ResturantMenu\ResturantMenu.ServerApp\bin\Debug\netcoreapp3.1\Json.Net.dll
+F:\Saeed-Code\ResturantMenu\ResturantMenu.ServerApp\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll

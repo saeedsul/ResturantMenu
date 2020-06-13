@@ -1,9 +1,13 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
 using ResturantMenu.Shared;
+using JsonSerializer = System.Text.Json.JsonSerializer;
 
 namespace ResturantMenu.Main.Services
 {
@@ -18,8 +22,12 @@ namespace ResturantMenu.Main.Services
 
         public async Task<List<Product>> Get()
         {
-            return await JsonSerializer.DeserializeAsync<List<Product>>
-                (await _httpClient.GetStreamAsync($"api/product"), new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
+            using (var response = await _httpClient.GetAsync("api/product"))
+            {
+                var content = await response.Content.ReadAsStringAsync();
+                
+                return JsonConvert.DeserializeObject<List<Product>>(content);
+            }
         }
 
         public async Task<Product> Get(int productId)
@@ -28,19 +36,33 @@ namespace ResturantMenu.Main.Services
                 (await _httpClient.GetStreamAsync($"api/product/{productId}"), new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
         }
 
-        public async Task<Product> Add(Product product)
+        public async Task<ProductModel> Add(Product product)
         {
             var productJson =
                 new StringContent(JsonSerializer.Serialize(product), Encoding.UTF8, "application/json");
 
-            var response = await _httpClient.PostAsync("api/product", productJson);
-
-            if (response.IsSuccessStatusCode)
+           using (var response = await _httpClient.PostAsync("api/product", productJson))
             {
-                return await JsonSerializer.DeserializeAsync<Product>(await response.Content.ReadAsStreamAsync());
-            }
+                var content = await response.Content.ReadAsStringAsync();
 
-            return null;
+                if (response.IsSuccessStatusCode != false)
+                    return JsonConvert.DeserializeObject<ProductModel>(content);
+
+                var errorKeyPair = JsonConvert.DeserializeObject<Dictionary<string, string []>>(content);
+                   
+                var errors = errorKeyPair.Select(
+                    item => 
+                        new ApiError
+                        {
+                            FieldName = item.Key, 
+                            Description = item.Value.ToList().FirstOrDefault()
+                        }).ToList();
+
+                return new ProductModel
+                {
+                    Errors = errors
+                };
+            }
         }
 
         public async Task Update(Product product)
@@ -55,5 +77,43 @@ namespace ResturantMenu.Main.Services
         {
             await _httpClient.DeleteAsync($"api/product/{productId}");
         }
+    }
+
+    public class ApiException : Exception
+    {
+        public bool IsSuccess { get; set; }
+        public int StatusCode { get; set; }
+        public List<ApiError> Errors { get; set; } = new List<ApiError>();
+    }
+
+    public class ProductModel : ApiException
+    {
+        public Product Product { get; set; }
+    }
+    public sealed class ApiError
+    {
+        public ApiError()
+        {
+        }
+        public ApiError(string code, string description)
+        {
+            Code = code;
+            Description = description;
+        }
+
+        public ApiError(string code, string fieldName, string description)
+        {
+            Code = code;
+            FieldName = fieldName;
+            Description = description;
+        }
+
+        public string Code { get; set; }
+
+        public string Description { get; set; }
+
+        public string ResourceName { get; set; }
+
+        public string FieldName { get; set; }
     }
 }

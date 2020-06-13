@@ -19,7 +19,7 @@ namespace ResturantMenu.Api.Controllers
         [HttpGet]
         public async Task<IActionResult> Get()
         {
-            return Ok(await _productRepository.GetAll());
+            return Ok(await _productRepository.Get());
         }
 
         [HttpGet("{id}")]
@@ -36,11 +36,11 @@ namespace ResturantMenu.Api.Controllers
 
             if (string.IsNullOrEmpty(product.Name))
             {
-                ModelState.AddModelError(nameof(product.Name), "Product name can not be empty");
+                ModelState.AddModelError(nameof(product.Name), "not be empty");
             }
             if (product.CategoryId == 0)
             {
-                ModelState.AddModelError(nameof(product.CategoryId), "Product CategoryId can not be empty");
+                ModelState.AddModelError(nameof(product.CategoryId), "can not be empty");
             }
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
@@ -89,7 +89,7 @@ namespace ResturantMenu.Api.Controllers
 
             await _productRepository.Delete(id);
 
-            return NoContent();//success
+            return NoContent();
         }
     }
 }

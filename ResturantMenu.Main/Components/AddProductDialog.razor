@@ -1,0 +1,70 @@
+﻿@inherits AddProductDialogBase
+
+@if (ShowDialog)
+{
+    <div class="modal fade show d-block" id="exampleModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="titleLabel">Product Add</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" @onclick="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    @if (ShowError)
+                    {
+                        <div class="validation-message">
+                            <ul>
+                                @foreach (var error in Errors)
+                                {
+                                    <li>@error.FieldName @error.Description</li>
+                                }
+                            </ul>
+                        </div>
+                    }
+
+                    <EditForm Model="@Product" OnValidSubmit="@HandleValidSubmit">
+
+                        <DataAnnotationsValidator />
+
+                        <div class="form-group">
+                            <label for="name">Name: </label>
+                            <InputText id="name" class="form-control" @bind-Value="Product.Name" placeholder="Enter product name" />
+                            <ValidationMessage For="@(() => Product.Name)" />
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="jobcategory">Category: </label>
+                            <InputSelect id="jobcategory" class="form-control col-sm-8" @bind-Value="@CategoryId">
+                                @foreach (var category in Categories)
+                                    {
+                                    <option value="@category.CategoryId">@category.Name</option>
+                                    }
+                            </InputSelect>
+                            <ValidationMessage For="@(() => Product.CategoryId)" />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="unitprice">Unit Price: </label>
+                            <InputNumber id="unitprice" class="form-control" @bind-Value="Product.UnitPrice" />
+                        </div>
+                        <div class="form-group">
+                            <label for="image">Image: </label>
+                            <InputText id="image" class="form-control" @bind-Value="Product.Image" placeholder="Enter product image" />
+                        </div>
+                        <div class="form-group">
+                            <label for="isAvailable">Is Available: </label>
+                            <InputCheckbox id="isAvailable" @bind-Value="Product.IsAvailable" />
+                        </div>
+                        <div class="align-content-center">
+                            <button type="submit" class="btn btn-primary">Save</button>
+                            <a class="btn btn-outline-primary" @onclick="@Close">Close</a>
+                        </div>
+                    </EditForm>
+
+                </div>
+            </div>
+        </div>
+    </div>
+}
