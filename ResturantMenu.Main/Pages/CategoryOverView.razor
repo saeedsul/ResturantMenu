@@ -1,0 +1,46 @@
+﻿@page "/categoryoverview"
+@inherits CategoryOverViewBase
+
+<h1 class="page-title">All categories</h1>
+
+@if (Categories == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+        <tr>
+            <th></th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Sequence</th>
+            <th>Is Available</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var category in Categories)
+        {
+            <tr>
+                <td><img src="@($"https://gillcleerenpluralsight.blob.core.windows.net/person/{category.CategoryId}-small.jpg")" class="rounded-circle" /></td>
+                <td>@category.Name</td>
+                <td>@category.Description</td>
+                <td>@category.Sequence</td>
+                <td>@category.IsAvaliable</td>
+                <td> 
+                    <i class="oi oi-trash" @onclick="@(() => Delete(category.CategoryId))"></i>
+                    <NavLink href="@($"categorydetail/{category.CategoryId}")" class="btn btn-primary table-btn">
+                        <i class="fas fa-edit"></i>
+                    </NavLink>
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+}
+
+<button @onclick="QuickAddCategory" class="btn btn-dark table-btn quick-add-btn">&nbsp;&nbsp;+&nbsp;&nbsp;</button>
+
+<AddCategoryDialog @ref="AddCategoryDialog" CloseEventCallback="@(AddCategoryDialog_OnDialogClose)"></AddCategoryDialog>

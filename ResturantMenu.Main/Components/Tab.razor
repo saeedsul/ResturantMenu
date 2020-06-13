@@ -1,0 +1,39 @@
+﻿<li>
+    <h3>
+        <a @onclick="Activate" class="nav-link @TitleCssClass" role="button">
+            @Title
+        </a>
+    </h3>
+</li>
+
+@code {
+    [CascadingParameter]
+    public TabSet ContainerTabSet { get; set; }
+
+    [Parameter]
+    public string Title { get; set; }
+
+    [Parameter]
+    public RenderFragment ChildContent { get; set; }
+
+    // NOTE: use IsActiveTab within the Tab, NOT ActiveTab
+    private string TitleCssClass => ContainerTabSet.IsActiveTab(this) ? "active" : null;
+
+    private void Activate()
+    {
+        ContainerTabSet.ActiveTab = this;
+    }
+
+    // attach the tab to the tabset
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        ContainerTabSet.AddTab(this);
+    }
+
+    // detach the tab to the tabset
+    public void Dispose()
+    {
+        this.ContainerTabSet.RemoveTab(this);
+    }
+}

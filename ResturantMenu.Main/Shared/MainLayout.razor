@@ -1,0 +1,25 @@
+﻿@inherits LayoutComponentBase
+
+<button class="oi @ToggleSideBarIconCssClass float-right" style="position: relative; z-index: 1; " type="button" @onclick="ToggleSideBar"></button>
+<div class="sidebar @ToggleSideBarCssClass">
+    <NavMenu />   
+</div>
+
+<div class="main">   
+
+    <div class="content px-4">
+        @Body
+    </div>
+</div>
+
+@code {
+    bool collapseSideBar = false;
+
+    string ToggleSideBarCssClass => collapseSideBar ? "collapse" : null;
+    string ToggleSideBarIconCssClass => collapseSideBar ? "oi-chevron-right" : "oi-chevron-left";
+
+    void ToggleSideBar()
+    {
+        collapseSideBar = !collapseSideBar;
+    }
+}
