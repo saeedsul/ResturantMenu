@@ -13,6 +13,18 @@
             <InputText id="name" class="form-control" @bind-Value="Product.Name" placeholder="Enter product name" />
             <ValidationMessage For="@(() => Product.Name)" />
         </div>
+
+        <div class="form-group">
+            <label for="category">Category: </label>
+            <InputSelect id="category" class="form-control" @bind-Value="@CategoryId">
+                @foreach (var category in Categories)
+                {
+                    <option value="@category.CategoryId">@category.Name</option>
+                }
+            </InputSelect>
+            <ValidationMessage For="@(() => Product.CategoryId)" />
+        </div>
+
         <div class="form-group">
             <label for="unitprice">Unit Price: </label>
             <InputNumber id="unitprice" class="form-control" @bind-Value="Product.UnitPrice" />
@@ -21,12 +33,12 @@
             <label for="image">Image: </label>
             <InputText id="image" class="form-control" @bind-Value="Product.Image" placeholder="Enter product image" />
         </div>
-        @*<div class="form-group">
-                            <label for="isavailable">Is Available: </label>
-                            <InputCheckbox id="isavailable" @bind-Value="Product.IsAvaliable"/>
-                        </div>*@
+        <div class="form-group">
+            <label for="isAvailable">Is Available: </label>
+            <InputCheckbox id="isAvailable" @bind-Value="Product.IsAvailable" />
+        </div>
         <div class="align-content-center">
-            <button type="submit" class="btn btn-primary">Save category</button>
+            <button type="submit" class="btn btn-primary">Save</button>
             <a class="btn btn-outline-primary edit-outline-btn" @onclick="@NavigateToMainMenu">Cancel</a>
         </div>
     </EditForm>

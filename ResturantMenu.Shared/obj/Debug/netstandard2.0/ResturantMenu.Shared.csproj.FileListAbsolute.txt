@@ -6,3 +6,4 @@ F:\Saeed-Code\ResturantMenu\ResturantMenu.Shared\obj\Debug\netstandard2.0\Restur
 F:\Saeed-Code\ResturantMenu\ResturantMenu.Shared\obj\Debug\netstandard2.0\ResturantMenu.Shared.csproj.CoreCompileInputs.cache
 F:\Saeed-Code\ResturantMenu\ResturantMenu.Shared\obj\Debug\netstandard2.0\ResturantMenu.Shared.dll
 F:\Saeed-Code\ResturantMenu\ResturantMenu.Shared\obj\Debug\netstandard2.0\ResturantMenu.Shared.pdb
+F:\Saeed-Code\ResturantMenu\ResturantMenu.Shared\obj\Debug\netstandard2.0\ResturantMenu.Shared.csprojAssemblyReference.cache

@@ -32,8 +32,12 @@ namespace ResturantMenu.Main.Services
 
         public async Task<Product> Get(int productId)
         {
-            return await JsonSerializer.DeserializeAsync<Product>
-                (await _httpClient.GetStreamAsync($"api/product/{productId}"), new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
+            using (var response = await _httpClient.GetAsync($"api/product/{productId}"))
+            {
+                var content = await response.Content.ReadAsStringAsync();
+
+                return JsonConvert.DeserializeObject<Product>(content);
+            }
         }
 
         public async Task<ProductModel> Add(Product product)
@@ -45,7 +49,7 @@ namespace ResturantMenu.Main.Services
             {
                 var content = await response.Content.ReadAsStringAsync();
 
-                if (response.IsSuccessStatusCode != false)
+                if (response.IsSuccessStatusCode)
                     return JsonConvert.DeserializeObject<ProductModel>(content);
 
                 var errorKeyPair = JsonConvert.DeserializeObject<Dictionary<string, string []>>(content);
@@ -89,6 +93,11 @@ namespace ResturantMenu.Main.Services
     public class ProductModel : ApiException
     {
         public Product Product { get; set; }
+    }
+
+    public class CategoryModel : ApiException
+    {
+        public Category Category { get; set; }
     }
     public sealed class ApiError
     {

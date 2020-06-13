@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Components;
 using ResturantMenu.Main.Services;
 using ResturantMenu.Shared;
@@ -10,10 +11,15 @@ namespace ResturantMenu.Main.Pages
         [Inject]
         public IProductDataService ProductDataService { get; set; }
         [Inject]
+        public ICategoryDataService CategoryDataService { get; set; }
+        [Inject]
         public NavigationManager NavigationManager { get; set; }
         [Parameter]
         public string ProductId { get; set; }
+        protected string CategoryId;
+        public List<ApiError> Errors { get; set; } = new List<ApiError>();
         public Product Product { get; set; } = new Product();
+        public List<Category> Categories { get; set; } = new List<Category>();
         protected string Message = string.Empty;
         protected string StatusClass = string.Empty;
 
@@ -21,6 +27,12 @@ namespace ResturantMenu.Main.Pages
         {
             int.TryParse(ProductId, out var productId);
             Product = await ProductDataService.Get(productId);
+
+            CategoryId = Product.CategoryId.ToString();
+
+            Categories = await CategoryDataService.Get();
+
+            Categories.Insert(0, new Category { CategoryId = -1, Name = "Please select" });
         }
 
         protected async Task HandleValidSubmit()

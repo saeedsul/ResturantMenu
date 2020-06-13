@@ -14,7 +14,17 @@
                     </button>
                 </div>
                 <div class="modal-body">
-
+                    @if (ShowError)
+                    {
+                        <div class="validation-message">
+                            <ul>
+                                @foreach (var error in Errors)
+                                {
+                                    <li>@error.FieldName @error.Description</li>
+                                }
+                            </ul>
+                        </div>
+                    }
                     <EditForm Model="@Category" OnValidSubmit="@HandleValidSubmit">
 
                         <DataAnnotationsValidator />

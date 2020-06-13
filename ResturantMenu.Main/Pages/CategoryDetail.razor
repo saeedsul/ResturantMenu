@@ -4,7 +4,17 @@
 <section class="category-edit">
 
     <h1 class="page-title">Details for @Category.Name</h1>
-
+    @if (ShowError)
+    {
+        <div class="validation-message">
+            <ul>
+                @foreach (var error in Errors)
+                {
+                    <li>@error.FieldName @error.Description</li>
+                }
+            </ul>
+        </div>
+    }
     <EditForm Model="@Category" OnValidSubmit="@(() => HandleValidSubmit())" OnInvalidSubmit="@(() => HandleInvalidSubmit())">
         <DataAnnotationsValidator />
 

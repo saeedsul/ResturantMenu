@@ -1,3 +1,8 @@
+F:\Saeed-Code\ResturantMenu\ResturantMenu.Main\bin\Debug\netstandard2.0\ResturantMenu.Main.deps.json
+F:\Saeed-Code\ResturantMenu\ResturantMenu.Main\bin\Debug\netstandard2.0\ResturantMenu.Main.dll
+F:\Saeed-Code\ResturantMenu\ResturantMenu.Main\bin\Debug\netstandard2.0\ResturantMenu.Main.pdb
+F:\Saeed-Code\ResturantMenu\ResturantMenu.Main\bin\Debug\netstandard2.0\ResturantMenu.Shared.dll
+F:\Saeed-Code\ResturantMenu\ResturantMenu.Main\bin\Debug\netstandard2.0\ResturantMenu.Shared.pdb
 F:\Saeed-Code\ResturantMenu\ResturantMenu.Main\obj\Debug\netstandard2.0\ResturantMenu.Main.csprojAssemblyReference.cache
 F:\Saeed-Code\ResturantMenu\ResturantMenu.Main\obj\Debug\netstandard2.0\ResturantMenu.Main.AssemblyInfoInputs.cache
 F:\Saeed-Code\ResturantMenu\ResturantMenu.Main\obj\Debug\netstandard2.0\ResturantMenu.Main.AssemblyInfo.cs
@@ -39,11 +44,6 @@ F:\Saeed-Code\ResturantMenu\ResturantMenu.Main\obj\Debug\netstandard2.0\Razor\Pa
 F:\Saeed-Code\ResturantMenu\ResturantMenu.Main\obj\Debug\netstandard2.0\Razor\Shared\MainLayout.razor.g.cs
 F:\Saeed-Code\ResturantMenu\ResturantMenu.Main\obj\Debug\netstandard2.0\Razor\Shared\NavMenu.razor.g.cs
 F:\Saeed-Code\ResturantMenu\ResturantMenu.Main\obj\Debug\netstandard2.0\Razor\_Imports.razor.g.cs
-F:\Saeed-Code\ResturantMenu\ResturantMenu.Main\bin\Debug\netstandard2.0\ResturantMenu.Main.deps.json
-F:\Saeed-Code\ResturantMenu\ResturantMenu.Main\bin\Debug\netstandard2.0\ResturantMenu.Main.dll
-F:\Saeed-Code\ResturantMenu\ResturantMenu.Main\bin\Debug\netstandard2.0\ResturantMenu.Main.pdb
-F:\Saeed-Code\ResturantMenu\ResturantMenu.Main\bin\Debug\netstandard2.0\ResturantMenu.Shared.dll
-F:\Saeed-Code\ResturantMenu\ResturantMenu.Main\bin\Debug\netstandard2.0\ResturantMenu.Shared.pdb
 F:\Saeed-Code\ResturantMenu\ResturantMenu.Main\obj\Debug\netstandard2.0\ResturantMenu.Main.RazorTargetAssemblyInfo.cache
 F:\Saeed-Code\ResturantMenu\ResturantMenu.Main\obj\Debug\netstandard2.0\ResturantMenu.Main.csproj.CopyComplete
 F:\Saeed-Code\ResturantMenu\ResturantMenu.Main\obj\Debug\netstandard2.0\staticwebassets\ResturantMenu.Main.StaticWebAssets.Manifest.cache

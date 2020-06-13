@@ -28,37 +28,6 @@
                                 </div>
                                 }
                             </div>
-                                    @*@foreach (var product in Products.FindAll(s => s.CategoryId == category.CategoryId))
-                                    {
-                                    <div class="card h-100 card-body">
-                                        <div class="card-header">@product.Name</div>
-                                        <div class="card-body">
-                                            <div class="card-text">@product.UnitPrice.ToString("C")</div>
-                                        </div>
-                                        <div class="card-footer">
-                                            <span class="oi oi-plus btn btn-dark" @onclick="@(() => AddToCart(product))"></span>
-                                        </div>
-                                    </div>
-                                    }*@
-                                  
-
-
-                            @*<div class="row">
-                                <div class="card-deck">
-                                    @foreach (var product in Products.FindAll(s => s.CategoryId == category.CategoryId))
-                                    {
-                                        <div class="card text-center cart-item-font">
-                                            <div class="card-header">@product.Name</div>
-                                            <div class="card-body">
-                                                <div class="card-text">@product.UnitPrice.ToString("C")</div>
-                                            </div>
-                                            <div class="card-footer">
-                                                <span class="oi oi-plus btn btn-dark" @onclick="@(() => AddToCart(product))"></span>
-                                            </div>
-                                        </div>
-                                    }
-                                </div>
-                            </div>*@
                         </Tab>
                     }
                 </TabSet>

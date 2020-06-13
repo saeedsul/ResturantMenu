@@ -1,4 +1,6 @@
-﻿using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Components;
 using ResturantMenu.Main.Services;
 using ResturantMenu.Shared;
@@ -14,8 +16,10 @@ namespace ResturantMenu.Main.Pages
         [Parameter]
         public string CategoryId { get; set; }
         public Category Category { get; set; } = new Category();
+        public List<ApiError> Errors { get; set; } = new List<ApiError>();
         protected string Message = string.Empty;
         protected string StatusClass = string.Empty;
+        public bool ShowError { get; set; }
 
         protected override async Task OnInitializedAsync()
         {
@@ -27,16 +31,17 @@ namespace ResturantMenu.Main.Pages
         {
             if (Category.CategoryId == 0)
             {
-                var category = await CategoryDataService.Add(Category);
-                if (category != null)
+                var response = await CategoryDataService.Add(Category);
+                if (response.Errors.Any())
                 {
-                    StatusClass = "alert-success";
-                    Message = "New category added successfully.";
+                    ShowError = true;
+                    Errors = response.Errors;
+                    StatusClass = "alert-danger";
                 }
                 else
                 {
-                    StatusClass = "alert-danger";
-                    Message = "Something went wrong adding the new category. Please try again.";
+                    StatusClass = "alert-success";
+                    Message = "New category added successfully.";
                 }
             }
             else

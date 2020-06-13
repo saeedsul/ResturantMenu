@@ -8,7 +8,7 @@ namespace ResturantMenu.Main.Services
     {
         Task<List<Category>> Get();
         Task<Category> Get(int categoryId);
-        Task<Category> Add(Category category);
+        Task<CategoryModel> Add(Category category);
         Task Update(Category category);
         Task Delete(int categoryId);
     }

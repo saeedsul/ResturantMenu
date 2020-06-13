@@ -1,9 +1,12 @@
 ﻿using ResturantMenu.Shared;
 using System.Collections.Generic;
+using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
+using JsonSerializer = System.Text.Json.JsonSerializer;
 
 namespace ResturantMenu.Main.Services
 {
@@ -18,29 +21,51 @@ namespace ResturantMenu.Main.Services
 
         public async Task<List<Category>> Get()
         {
-            return await JsonSerializer.DeserializeAsync<List<Category>>
-                (await _httpClient.GetStreamAsync($"api/category"), new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
+            using (var response = await _httpClient.GetAsync("api/category"))
+            {
+                var content = await response.Content.ReadAsStringAsync();
+
+                return JsonConvert.DeserializeObject<List<Category>>(content);
+            }
         }
 
         public async Task<Category> Get(int categoryId)
         {
-            return await JsonSerializer.DeserializeAsync<Category>
-                (await _httpClient.GetStreamAsync($"api/category/{categoryId}"), new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
+            using (var response = await _httpClient.GetAsync($"api/category/{categoryId}"))
+            {
+                var content = await response.Content.ReadAsStringAsync();
+
+                return JsonConvert.DeserializeObject<Category>(content);
+            }
         }
 
-        public async Task<Category> Add(Category category)
+        public async Task<CategoryModel> Add(Category category)
         {
             var categoryJson =
                 new StringContent(JsonSerializer.Serialize(category), Encoding.UTF8, "application/json");
 
-            var response = await _httpClient.PostAsync("api/category", categoryJson);
-
-            if (response.IsSuccessStatusCode)
+            using (var response = await _httpClient.PostAsync("api/category", categoryJson))
             {
-                return await JsonSerializer.DeserializeAsync<Category>(await response.Content.ReadAsStreamAsync());
-            }
+                var content = await response.Content.ReadAsStringAsync();
 
-            return null;
+                if (response.IsSuccessStatusCode)
+                    return JsonConvert.DeserializeObject<CategoryModel>(content);
+
+                var errorKeyPair = JsonConvert.DeserializeObject<Dictionary<string, string[]>>(content);
+
+                var errors = errorKeyPair.Select(
+                    item =>
+                        new ApiError
+                        {
+                            FieldName = item.Key,
+                            Description = item.Value.ToList().FirstOrDefault()
+                        }).ToList();
+
+                return new CategoryModel
+                {
+                    Errors = errors
+                };
+            }
         }
 
         public async Task Update(Category category)

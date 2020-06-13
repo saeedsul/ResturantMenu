@@ -150,6 +150,7 @@ F:\Saeed-Code\ResturantMenu\ResturantMenu.ClientApp2\bin\Debug\netstandard2.1\Sy
 F:\Saeed-Code\ResturantMenu\ResturantMenu.ClientApp2\bin\Debug\netstandard2.1\System.Text.Encodings.Web.dll
 F:\Saeed-Code\ResturantMenu\ResturantMenu.ClientApp2\bin\Debug\netstandard2.1\System.Text.Json.dll
 F:\Saeed-Code\ResturantMenu\ResturantMenu.ClientApp2\bin\Debug\netstandard2.1\System.Threading.Tasks.Extensions.dll
+F:\Saeed-Code\ResturantMenu\ResturantMenu.ClientApp2\obj\Debug\netstandard2.1\ResturantMenu.ClientApp2.csprojAssemblyReference.cache
 F:\Saeed-Code\ResturantMenu\ResturantMenu.ClientApp2\obj\Debug\netstandard2.1\ResturantMenu.ClientApp2.AssemblyInfoInputs.cache
 F:\Saeed-Code\ResturantMenu\ResturantMenu.ClientApp2\obj\Debug\netstandard2.1\ResturantMenu.ClientApp2.AssemblyInfo.cs
 F:\Saeed-Code\ResturantMenu\ResturantMenu.ClientApp2\obj\Debug\netstandard2.1\ResturantMenu.ClientApp2.csproj.CoreCompileInputs.cache

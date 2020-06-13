@@ -25,7 +25,7 @@ namespace ResturantMenu.Api.Repository
 
         public async Task<Product> Get(int productId)
         {
-            return await _appDbContext.Products.FirstOrDefaultAsync(c => c.CategoryId == productId);
+            return await _appDbContext.Products.FirstOrDefaultAsync(c => c.ProductId == productId);
         }
 
         public async Task<Product> Add(Product product)
@@ -39,7 +39,7 @@ namespace ResturantMenu.Api.Repository
 
         public async Task<Product> Update(Product product)
         {
-            var entity = await _appDbContext.Products.FirstOrDefaultAsync(e => e.CategoryId == product.ProductId);
+            var entity = await _appDbContext.Products.FirstOrDefaultAsync(e => e.ProductId == product.ProductId);
 
             if (entity == null) return null;
 
