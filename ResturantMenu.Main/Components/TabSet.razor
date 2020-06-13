@@ -1,12 +1,12 @@
 ﻿@inherits TabSetBase
 
     <CascadingValue Value=this>
-        <ul class="nav nav-tabs">
+        <ul class="nav nav-pills">
             @ChildContent
         </ul>
 
         <!-- Display body for only the active tab -->
-        <div class="nav-tabs-body p-4">
+        <div class="tab-content">
             @if (HasActiveTab)
             {
                 @ActiveTab?.ChildContent
