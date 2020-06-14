@@ -9,34 +9,28 @@
 }
 else
 {
-    <table class="table">
-        <thead>
-        <tr>
-            <th></th>
-            <th>Name</th>
-            <th>Unit Price</th>
-            <th>Is Available</th>
-            <th></th>
-        </tr>
-        </thead>
-        <tbody>
-        @foreach (var product in Products)
-        {
-            <tr>
-                <td><img src="@($"https://gillcleerenpluralsight.blob.core.windows.net/person/{product.ProductId}-small.jpg")" class="rounded-circle" /></td>
-                <td>@product.Name</td>
-                <td>@product.UnitPrice</td>
-                <td>@product.IsAvailable</td>
-                <td> 
-                    <i class="oi oi-trash" @onclick="@(() => Delete(product.ProductId))"></i>
-                    <NavLink href="@($"productdetail/{product.ProductId}")" class="btn btn-primary table-btn">
-                        <i class="fas fa-edit"></i>
-                    </NavLink>
-                </td>
-            </tr>
-        }
-        </tbody>
-    </table>
+    <BlazorDataGrid Items="@Products" PageSize="5" ShowTotalResult="true" Translation="@Translate" PageSelector="@PageSelector"  
+                    ShowPageSelector="true" TableClass="table table-hover bg-white">
+        <BlazorDataGridColumn>
+            <DataGridColumn Items="@Products" ColumnName=""></DataGridColumn>
+            <DataGridColumn Items="@Products" ColumnName="Name" DisplayColumnName="Name"></DataGridColumn>
+            <DataGridColumn Items="@Products" ColumnName="UnitPrice" DisplayColumnName="Unit Price"></DataGridColumn>
+            <DataGridColumn Items="@Products" ColumnName="IsAvailable" DisplayColumnName="Is Available"></DataGridColumn>
+            <DataGridColumn Items="@Products" ColumnName=""></DataGridColumn>
+        </BlazorDataGridColumn>
+        <GridRow>
+            <td><img src="@($"https://gillcleerenpluralsight.blob.core.windows.net/person/{context.ProductId}-small.jpg")" class="rounded-circle" /></td>
+            <td>@context.Name</td>
+            <td>@context.UnitPrice</td>
+            <td>@context.IsAvailable</td>
+            <td>
+                <i class="oi oi-trash" @onclick="@(() => Delete(context.ProductId))"></i>
+                <NavLink href="@($"productdetail/{context.ProductId}")" class="btn btn-primary table-btn">
+                    <i class="fas fa-edit"></i>
+                </NavLink>
+            </td>
+        </GridRow>
+    </BlazorDataGrid>
 }
 
 <button @onclick="QuickAddProduct" class="btn btn-dark table-btn quick-add-btn">&nbsp;&nbsp;+&nbsp;&nbsp;</button>

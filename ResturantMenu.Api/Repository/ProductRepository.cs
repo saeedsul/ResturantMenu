@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using ResturantMenu.Api.Data;
@@ -19,7 +18,6 @@ namespace ResturantMenu.Api.Repository
 
         public async Task<List<Product>> Get()
         {
-            var t = _appDbContext.Products.ToList();
             return await _appDbContext.Products.ToListAsync();
         }
 

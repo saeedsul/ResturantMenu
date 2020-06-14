@@ -1,4 +1,5 @@
 using System;
+using BlazorDataGrid.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -23,6 +24,7 @@ namespace ResturantMenu.ServerApp
         {
             services.AddRazorPages();
             services.AddServerSideBlazor();
+            services.AddScoped<AppState>();
 
             services.AddHttpClient<ICategoryDataService, CategoryDataService>(client =>
             {

@@ -1,51 +1,56 @@
 ﻿@page "/categorydetail/{CategoryId}"
 @inherits CategoryDetailBase
 
-<section class="category-edit">
-
-    <h1 class="page-title">Details for @Category.Name</h1>
-    @if (ShowError)
-    {
-        <div class="validation-message">
-            <ul>
-                @foreach (var error in Errors)
+    <div class="bg-white container">
+        <div class="card">
+            <div class="card-header">
+                <h1>Details for @Category.Name</h1>
+            </div>
+            <div class="card-body">
+                @if (ShowError)
                 {
-                    <li>@error.FieldName @error.Description</li>
+                    <div class="validation-message">
+                        <ul>
+                            @foreach (var error in Errors)
+                            {
+                                <li>@error.FieldName @error.Description</li>
+                            }
+                        </ul>
+                    </div>
                 }
-            </ul>
-        </div>
-    }
-    <EditForm Model="@Category" OnValidSubmit="@(() => HandleValidSubmit())" OnInvalidSubmit="@(() => HandleInvalidSubmit())">
-        <DataAnnotationsValidator />
+                <EditForm Model="@Category" OnValidSubmit="@(() => HandleValidSubmit())" OnInvalidSubmit="@(() => HandleInvalidSubmit())">
+                    <DataAnnotationsValidator />
 
-        <div class="form-group">
-            <label for="name">Name: </label>
-            <InputText id="name" class="form-control" @bind-Value="Category.Name" placeholder="Enter category name" />
-            <ValidationMessage For="@(() => Category.Name)" />
+                    <div class="form-group">
+                        <label for="name">Name: </label>
+                        <InputText id="name" class="form-control" @bind-Value="Category.Name" placeholder="Enter category name" />
+                        <ValidationMessage For="@(() => Category.Name)" />
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Description: </label>
+                        <InputText id="description" class="form-control" @bind-Value="Category.Description" placeholder="Enter category description" />
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Sequence: </label>
+                        <InputNumber id="sequence" class="form-control" @bind-Value="Category.Sequence" />
+                    </div>
+                    <div class="form-group">
+                        <label for="image">Image: </label>
+                        <InputText id="image" class="form-control" @bind-Value="Category.Image" placeholder="Enter category image" />
+                    </div>
+                    <div class="form-group">
+                        <label for="isAvailable">Is Available: </label>
+                        <InputCheckbox id="isAvailable" @bind-Value="Category.IsAvailable" />
+                    </div>
+                    <div class="align-content-center">
+                        <button type="submit" class="btn btn-primary">Save</button>
+                        <a class="btn btn-outline-primary" @onclick="@NavigateToMainMenu">Cancel</a>
+                    </div>
+                </EditForm>
+            </div>
+            <div class="card-footer">
+                <div class="alert @StatusClass">@Message</div>
+                <a class="btn btn-outline-primary" @onclick="@NavigateToMainMenu">Back to overview</a>
+            </div>
         </div>
-        <div class="form-group">
-            <label for="name">Description: </label>
-            <InputText id="description" class="form-control" @bind-Value="Category.Description" placeholder="Enter category description" />
-        </div>
-        <div class="form-group">
-            <label for="name">Sequence: </label>
-            <InputNumber id="sequence" class="form-control" @bind-Value="Category.Sequence" />
-        </div>
-        <div class="form-group">
-            <label for="image">Image: </label>
-            <InputText id="image" class="form-control" @bind-Value="Category.Image" placeholder="Enter category image" />
-        </div>
-        <div class="form-group">
-            <label for="isAvailable">Is Available: </label>
-            <InputCheckbox id="isAvailable" @bind-Value="Category.IsAvailable" />
-        </div>
-        <div class="align-content-center">
-            <button type="submit" class="btn btn-primary">Save category</button>
-            <a class="btn btn-outline-primary edit-outline-btn" @onclick="@NavigateToMainMenu">Cancel</a>
-        </div>
-    </EditForm>
-
-    <div class="alert @StatusClass">@Message</div>
-    <a class="btn btn-outline-primary" @onclick="@NavigateToMainMenu">Back to overview</a>
-
-</section>
+    </div>

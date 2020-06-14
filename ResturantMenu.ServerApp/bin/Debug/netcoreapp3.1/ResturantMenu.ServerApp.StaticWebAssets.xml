@@ -1,3 +1,4 @@
 ﻿<StaticWebAssets Version="1.0">
+  <ContentRoot BasePath="_content/BlazorInput" Path="C:\Users\SuleimS\.nuget\packages\blazorinput\1.0.0\build\..\staticwebassets\" />
   <ContentRoot BasePath="_content/ResturantMenu.Main" Path="F:\Saeed-Code\ResturantMenu\ResturantMenu.Main\wwwroot\" />
 </StaticWebAssets>

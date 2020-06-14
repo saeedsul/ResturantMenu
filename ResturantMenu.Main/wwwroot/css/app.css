@@ -200,6 +200,10 @@ app {
     }
 }
 
+.oi-arrow-thick-bottom:before {
+    content: '' !important;
+}
+
 @media (min-width: 768px) {
     app {
         flex-direction: row;

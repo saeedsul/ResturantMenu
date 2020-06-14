@@ -42,5 +42,26 @@ namespace ResturantMenu.Main.Pages
         {
             AddCategoryDialog.Show();
         }
+
+        protected Dictionary<string, string> Translate = new Dictionary<string, string>
+        {
+            {"next", "next" },
+            {"previous", "Previous" },
+            {"pages", "Page __curpage__ of __totalpages__" },
+            {"totalresult", "__totalcount__ item" },
+            {"totalresultplural", "__totalcount__ items"},
+            {"filteredresults", "__filteredcount__ result of __totalcount__ items" },
+            {"filteredresultsplural", "__filteredcount__ results of __totalcount__ items"  },
+            {"selector", "Items per page:"}
+        };
+
+        protected Dictionary<string, int> PageSelector = new Dictionary<string, int>
+        {
+            {"5", 5 },
+            {"10", 10 },
+            {"20", 20 },
+            {"30", 30 },
+            {"All", 0 }
+        };
     }
 }

@@ -9,7 +9,32 @@
 }
 else
 {
-    <table class="table">
+    <BlazorDataGrid Items="@Categories" PageSize="5" ShowTotalResult="true" Translation="@Translate" PageSelector="@PageSelector"  
+                  ShowPageSelector="true" TableClass="table table-hover bg-white" >
+        <BlazorDataGridColumn>
+            <DataGridColumn Items="@Categories" ColumnName=""></DataGridColumn>
+            <DataGridColumn Items="@Categories" ColumnName="Name" DisplayColumnName="Name"></DataGridColumn>
+            <DataGridColumn Items="@Categories" ColumnName="Description" DisplayColumnName="Description"></DataGridColumn>
+            <DataGridColumn Items="@Categories" ColumnName="Sequence" DisplayColumnName="Sequence"></DataGridColumn>
+            <DataGridColumn Items="@Categories" ColumnName="IsAvailable" DisplayColumnName="Is Available"></DataGridColumn>
+            <DataGridColumn Items="@Categories" ColumnName=""></DataGridColumn>
+        </BlazorDataGridColumn>
+        <GridRow>
+            <td><img src="@($"https://gillcleerenpluralsight.blob.core.windows.net/person/{context.CategoryId}-small.jpg")" class="rounded-circle" /></td>
+            <td>@context.Name</td>
+            <td>@context.Description</td>
+            <td>@context.Sequence</td>
+            <td>@context.IsAvailable</td>
+            <td>
+                <i class="oi oi-trash" @onclick="@(() => Delete(context.CategoryId))"></i>
+                <NavLink href="@($"categorydetail/{context.CategoryId}")" class="btn btn-primary table-btn">
+                    <i class="fas fa-edit"></i>
+                </NavLink>
+            </td>
+        </GridRow>
+    </BlazorDataGrid>
+
+    @*<table class="table">
         <thead>
         <tr>
             <th></th>
@@ -38,7 +63,7 @@ else
             </tr>
         }
         </tbody>
-    </table>
+    </table>*@
 }
 
 <button @onclick="QuickAddCategory" class="btn btn-dark table-btn quick-add-btn">&nbsp;&nbsp;+&nbsp;&nbsp;</button>

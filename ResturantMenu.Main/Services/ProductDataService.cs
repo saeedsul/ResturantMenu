@@ -22,22 +22,18 @@ namespace ResturantMenu.Main.Services
 
         public async Task<List<Product>> Get()
         {
-            using (var response = await _httpClient.GetAsync("api/product"))
-            {
-                var content = await response.Content.ReadAsStringAsync();
+            using var response = await _httpClient.GetAsync("api/product");
+            var content = await response.Content.ReadAsStringAsync();
                 
-                return JsonConvert.DeserializeObject<List<Product>>(content);
-            }
+            return JsonConvert.DeserializeObject<List<Product>>(content);
         }
 
         public async Task<Product> Get(int productId)
         {
-            using (var response = await _httpClient.GetAsync($"api/product/{productId}"))
-            {
-                var content = await response.Content.ReadAsStringAsync();
+            using var response = await _httpClient.GetAsync($"api/product/{productId}");
+            var content = await response.Content.ReadAsStringAsync();
 
-                return JsonConvert.DeserializeObject<Product>(content);
-            }
+            return JsonConvert.DeserializeObject<Product>(content);
         }
 
         public async Task<ProductModel> Add(Product product)
@@ -45,28 +41,26 @@ namespace ResturantMenu.Main.Services
             var productJson =
                 new StringContent(JsonSerializer.Serialize(product), Encoding.UTF8, "application/json");
 
-           using (var response = await _httpClient.PostAsync("api/product", productJson))
-            {
-                var content = await response.Content.ReadAsStringAsync();
+            using var response = await _httpClient.PostAsync("api/product", productJson);
+            var content = await response.Content.ReadAsStringAsync();
 
-                if (response.IsSuccessStatusCode)
-                    return JsonConvert.DeserializeObject<ProductModel>(content);
+            if (response.IsSuccessStatusCode)
+                return JsonConvert.DeserializeObject<ProductModel>(content);
 
-                var errorKeyPair = JsonConvert.DeserializeObject<Dictionary<string, string []>>(content);
+            var errorKeyPair = JsonConvert.DeserializeObject<Dictionary<string, string []>>(content);
                    
-                var errors = errorKeyPair.Select(
-                    item => 
-                        new ApiError
-                        {
-                            FieldName = item.Key, 
-                            Description = item.Value.ToList().FirstOrDefault()
-                        }).ToList();
+            var errors = errorKeyPair.Select(
+                item => 
+                    new ApiError
+                    {
+                        FieldName = item.Key, 
+                        Description = item.Value.ToList().FirstOrDefault()
+                    }).ToList();
 
-                return new ProductModel
-                {
-                    Errors = errors
-                };
-            }
+            return new ProductModel
+            {
+                Errors = errors
+            };
         }
 
         public async Task Update(Product product)
