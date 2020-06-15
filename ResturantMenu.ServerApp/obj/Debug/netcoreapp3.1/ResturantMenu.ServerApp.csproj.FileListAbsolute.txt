@@ -1,3 +1,4 @@
+F:\Saeed-Code\ResturantMenu\ResturantMenu.ServerApp\bin\Debug\netcoreapp3.1\ResturantMenu.Main.StaticWebAssets.xml
 F:\Saeed-Code\ResturantMenu\ResturantMenu.ServerApp\bin\Debug\netcoreapp3.1\web.config
 F:\Saeed-Code\ResturantMenu\ResturantMenu.ServerApp\bin\Debug\netcoreapp3.1\appsettings.Development.json
 F:\Saeed-Code\ResturantMenu\ResturantMenu.ServerApp\bin\Debug\netcoreapp3.1\appsettings.json
@@ -11,7 +12,11 @@ F:\Saeed-Code\ResturantMenu\ResturantMenu.ServerApp\bin\Debug\netcoreapp3.1\Rest
 F:\Saeed-Code\ResturantMenu\ResturantMenu.ServerApp\bin\Debug\netcoreapp3.1\ResturantMenu.ServerApp.pdb
 F:\Saeed-Code\ResturantMenu\ResturantMenu.ServerApp\bin\Debug\netcoreapp3.1\ResturantMenu.ServerApp.Views.dll
 F:\Saeed-Code\ResturantMenu\ResturantMenu.ServerApp\bin\Debug\netcoreapp3.1\ResturantMenu.ServerApp.Views.pdb
+F:\Saeed-Code\ResturantMenu\ResturantMenu.ServerApp\bin\Debug\netcoreapp3.1\BlazorDataGrid.dll
+F:\Saeed-Code\ResturantMenu\ResturantMenu.ServerApp\bin\Debug\netcoreapp3.1\BlazorInput.dll
 F:\Saeed-Code\ResturantMenu\ResturantMenu.ServerApp\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authorization.dll
+F:\Saeed-Code\ResturantMenu\ResturantMenu.ServerApp\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Blazor.dll
+F:\Saeed-Code\ResturantMenu\ResturantMenu.ServerApp\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Blazor.Browser.dll
 F:\Saeed-Code\ResturantMenu\ResturantMenu.ServerApp\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Components.dll
 F:\Saeed-Code\ResturantMenu\ResturantMenu.ServerApp\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Components.Forms.dll
 F:\Saeed-Code\ResturantMenu\ResturantMenu.ServerApp\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Components.Web.dll
@@ -22,6 +27,7 @@ F:\Saeed-Code\ResturantMenu\ResturantMenu.ServerApp\bin\Debug\netcoreapp3.1\Micr
 F:\Saeed-Code\ResturantMenu\ResturantMenu.ServerApp\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Options.dll
 F:\Saeed-Code\ResturantMenu\ResturantMenu.ServerApp\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
 F:\Saeed-Code\ResturantMenu\ResturantMenu.ServerApp\bin\Debug\netcoreapp3.1\Microsoft.JSInterop.dll
+F:\Saeed-Code\ResturantMenu\ResturantMenu.ServerApp\bin\Debug\netcoreapp3.1\Mono.WebAssembly.Interop.dll
 F:\Saeed-Code\ResturantMenu\ResturantMenu.ServerApp\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
 F:\Saeed-Code\ResturantMenu\ResturantMenu.ServerApp\bin\Debug\netcoreapp3.1\ResturantMenu.Main.dll
 F:\Saeed-Code\ResturantMenu\ResturantMenu.ServerApp\bin\Debug\netcoreapp3.1\ResturantMenu.Shared.dll
@@ -47,9 +53,3 @@ F:\Saeed-Code\ResturantMenu\ResturantMenu.ServerApp\obj\Debug\netcoreapp3.1\stat
 F:\Saeed-Code\ResturantMenu\ResturantMenu.ServerApp\obj\Debug\netcoreapp3.1\ResturantMenu.ServerApp.dll
 F:\Saeed-Code\ResturantMenu\ResturantMenu.ServerApp\obj\Debug\netcoreapp3.1\ResturantMenu.ServerApp.pdb
 F:\Saeed-Code\ResturantMenu\ResturantMenu.ServerApp\obj\Debug\netcoreapp3.1\ResturantMenu.ServerApp.genruntimeconfig.cache
-F:\Saeed-Code\ResturantMenu\ResturantMenu.ServerApp\bin\Debug\netcoreapp3.1\ResturantMenu.Main.StaticWebAssets.xml
-F:\Saeed-Code\ResturantMenu\ResturantMenu.ServerApp\bin\Debug\netcoreapp3.1\BlazorDataGrid.dll
-F:\Saeed-Code\ResturantMenu\ResturantMenu.ServerApp\bin\Debug\netcoreapp3.1\BlazorInput.dll
-F:\Saeed-Code\ResturantMenu\ResturantMenu.ServerApp\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Blazor.dll
-F:\Saeed-Code\ResturantMenu\ResturantMenu.ServerApp\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Blazor.Browser.dll
-F:\Saeed-Code\ResturantMenu\ResturantMenu.ServerApp\bin\Debug\netcoreapp3.1\Mono.WebAssembly.Interop.dll

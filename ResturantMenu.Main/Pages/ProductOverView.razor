@@ -3,24 +3,26 @@
 
 <h1 class="page-title">All products</h1>
 
-@if (Products == null)
+@if (Model.ProductViewItems == null)
 {
     <p><em>Loading...</em></p>
 }
 else
 {
-    <BlazorDataGrid Items="@Products" PageSize="5" ShowTotalResult="true" Translation="@Translate" PageSelector="@PageSelector"  
+    <BlazorDataGrid Items="@Model.ProductViewItems" PageSize="5" ShowTotalResult="true" Translation="@Translate" PageSelector="@PageSelector"  
                     ShowPageSelector="true" TableClass="table table-hover bg-white">
         <BlazorDataGridColumn>
-            <DataGridColumn Items="@Products" ColumnName=""></DataGridColumn>
-            <DataGridColumn Items="@Products" ColumnName="Name" DisplayColumnName="Name"></DataGridColumn>
-            <DataGridColumn Items="@Products" ColumnName="UnitPrice" DisplayColumnName="Unit Price"></DataGridColumn>
-            <DataGridColumn Items="@Products" ColumnName="IsAvailable" DisplayColumnName="Is Available"></DataGridColumn>
-            <DataGridColumn Items="@Products" ColumnName=""></DataGridColumn>
+            <DataGridColumn Items="@Model.ProductViewItems" ColumnName=""></DataGridColumn>
+            <DataGridColumn Items="@Model.ProductViewItems" ColumnName="Name" DisplayColumnName="Name"></DataGridColumn>
+            <DataGridColumn Items="@Model.ProductViewItems" ColumnName="CategorgName" DisplayColumnName="Category"></DataGridColumn>
+            <DataGridColumn Items="@Model.ProductViewItems" ColumnName="UnitPrice" DisplayColumnName="Unit Price"></DataGridColumn>
+            <DataGridColumn Items="@Model.ProductViewItems" ColumnName="IsAvailable" DisplayColumnName="Is Available" ></DataGridColumn>
+            <DataGridColumn Items="@Model.ProductViewItems" ColumnName=""></DataGridColumn>
         </BlazorDataGridColumn>
         <GridRow>
             <td><img src="@($"https://gillcleerenpluralsight.blob.core.windows.net/person/{context.ProductId}-small.jpg")" class="rounded-circle" /></td>
             <td>@context.Name</td>
+            <tbody>@context.CategoryName</tbody>
             <td>@context.UnitPrice</td>
             <td>@context.IsAvailable</td>
             <td>

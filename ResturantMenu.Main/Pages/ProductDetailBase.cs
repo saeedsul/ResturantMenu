@@ -37,6 +37,8 @@ namespace ResturantMenu.Main.Pages
 
         protected async Task HandleValidSubmit()
         {
+            Product.CategoryId = int.Parse(CategoryId);
+
             if (Product.ProductId == 0)
             {
                 var product = await ProductDataService.Add(Product);

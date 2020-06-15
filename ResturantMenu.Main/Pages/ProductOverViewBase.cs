@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Components;
 using ResturantMenu.Main.Components;
@@ -11,8 +12,12 @@ namespace ResturantMenu.Main.Pages
     {
         [Inject]
         public IProductDataService ProductDataService { get; set; }
-        
+        [Inject]
+        public ICategoryDataService CategoryDataService { get; set; }
+
+        public ProductOverViewModel Model { get; set; } = new ProductOverViewModel();
         public List<Product> Products { get; set; } = new List<Product>();
+        public List<Category> Categories { get; set; } = new List<Category>();
 
         public AddProductDialogBase AddProductDialog { get; set; }
 
@@ -22,6 +27,20 @@ namespace ResturantMenu.Main.Pages
         protected override async Task OnInitializedAsync()
         {
             Products = await ProductDataService.Get();
+            Categories = await CategoryDataService.Get();
+            foreach (var product in Products)
+            {
+                Model.ProductViewItems.Add(new ProductViewItem
+                {
+                    CategoryId = product.CategoryId,
+                    CategoryName = Categories.First(x=>x.CategoryId == product.CategoryId).Name,
+                    Image = product.Image,
+                    IsAvailable = product.IsAvailable,
+                    Name = product.Name,
+                    ProductId = product.ProductId,
+                    UnitPrice = product.UnitPrice
+                });
+            }
         }
 
         protected async Task Delete(int productId)
@@ -62,5 +81,20 @@ namespace ResturantMenu.Main.Pages
             {"30", 30 },
             {"All", 0 }
         };
+    }
+
+    public class ProductOverViewModel
+    {
+        public List<ProductViewItem> ProductViewItems { get; set; } = new List<ProductViewItem>();
+    }
+    public class ProductViewItem
+    {
+        public int ProductId { get; set; }
+        public int CategoryId { get; set; }
+        public string CategoryName { get; set; }
+        public string Name { get; set; }
+        public double UnitPrice { get; set; }
+        public string Image { get; set; }
+        public bool IsAvailable { get; set; } = true;
     }
 }

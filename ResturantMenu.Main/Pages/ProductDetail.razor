@@ -16,7 +16,7 @@
                     <ValidationMessage For="@(() => Product.Name)" />
                 </div>
 
-                <div class="form-group">
+                <div class="form-group">                   
                     <label for="category">Category: </label>
                     <InputSelect id="category" class="form-control" @bind-Value="@CategoryId">
                         @foreach (var category in Categories)
