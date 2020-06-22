@@ -340,7 +340,7 @@ ASALocalRun/
 healthchecksdb
 
 
-bin/
-obj/
-Debug/
-Release/
+*/bin/
+*/obj/
+*/Debug/
+*/Release/
