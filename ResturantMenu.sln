@@ -11,8 +11,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ResturantMenu.Api", "Restur
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ResturantMenu.Shared", "ResturantMenu.Shared\ResturantMenu.Shared.csproj", "{A67D1125-DC2E-4D35-9628-CD8756807981}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ResturantMenu.ClientApp2", "ResturantMenu.ClientApp2\ResturantMenu.ClientApp2.csproj", "{91464F12-DD86-4732-92A0-1D9266797AA5}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,10 +33,6 @@ Global
 		{A67D1125-DC2E-4D35-9628-CD8756807981}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A67D1125-DC2E-4D35-9628-CD8756807981}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A67D1125-DC2E-4D35-9628-CD8756807981}.Release|Any CPU.Build.0 = Release|Any CPU
-		{91464F12-DD86-4732-92A0-1D9266797AA5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{91464F12-DD86-4732-92A0-1D9266797AA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{91464F12-DD86-4732-92A0-1D9266797AA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{91464F12-DD86-4732-92A0-1D9266797AA5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
